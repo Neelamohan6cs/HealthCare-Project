@@ -1,0 +1,377 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+ 
+}
+
+
+.body-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+
+.medical-icons {
+  position: fixed;
+  inset: 0;
+  z-index: 0;          
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.medical-icons img {
+  position: absolute;
+  bottom: -80px;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  animation: floatIcon linear infinite;
+}
+
+
+.medical-icons img:nth-child(1)  { left:  4%; width: 40px; height: 40px; animation-duration: 11s; animation-delay:  0s;  }
+.medical-icons img:nth-child(2)  { left: 12%; width: 55px; height: 55px; animation-duration: 14s; animation-delay:  2s;  }
+.medical-icons img:nth-child(3)  { left: 22%; width: 36px; height: 36px; animation-duration: 10s; animation-delay:  5s;  }
+.medical-icons img:nth-child(4)  { left: 32%; width: 50px; height: 50px; animation-duration: 16s; animation-delay:  1s;  }
+.medical-icons img:nth-child(5)  { left: 43%; width: 42px; height: 42px; animation-duration: 13s; animation-delay:  3.5s;}
+.medical-icons img:nth-child(6)  { left: 54%; width: 58px; height: 58px; animation-duration: 18s; animation-delay:  0.5s;}
+.medical-icons img:nth-child(7)  { left: 63%; width: 38px; height: 38px; animation-duration: 12s; animation-delay:  4s;  }
+.medical-icons img:nth-child(8)  { left: 72%; width: 46px; height: 46px; animation-duration: 15s; animation-delay:  2.5s;}
+.medical-icons img:nth-child(9)  { left: 82%; width: 52px; height: 52px; animation-duration: 17s; animation-delay:  6s;  }
+.medical-icons img:nth-child(10) { left: 91%; width: 34px; height: 34px; animation-duration:  9s; animation-delay:  1.5s;}
+
+@keyframes floatIcon {
+  0%   { transform: translateY(0)      rotate(0deg)   scale(0.5); opacity: 0;   }
+  10%  { opacity: 0.55; }
+  50%  { opacity: 0.65; }
+  90%  { opacity: 0.3;  }
+  100% { transform: translateY(-110vh) rotate(25deg)  scale(1.3); opacity: 0;   }
+}
+
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 50px 16px 60px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Health Form ===== */
+.health-form {
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 32px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(0, 198, 255, 0.8);
+  box-shadow:
+    0 0 24px rgba(0, 198, 255, 0.5),
+    0 0 60px rgba(0, 114, 255, 0.15);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* ===== Form Title ===== */
+.form-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
+}
+
+/* ===== Form Row ===== */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.form-row label {
+  flex: 1.2;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.form-row input,
+.form-row select {
+  flex: 2;
+  padding: 9px 11px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border-color: rgba(0, 198, 255, 0.8);
+  box-shadow: 0 0 6px rgba(0, 198, 255, 0.35);
+}
+
+.form-row input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Fix white text on select options */
+.form-row select option {
+  background: #1a3040;
+  color: #fff;
+}
+
+/* ===== Sensor / row buttons ===== */
+.form-row button {
+  flex: 1;
+  padding: 9px 10px;
+  border-radius: 6px;
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.form-row button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 4px 14px rgba(0, 198, 255, 0.4);
+}
+
+/* ===== Submit Button ===== */
+.submit-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(0, 114, 255, 0.35);
+}
+
+.submit-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 24px rgba(0, 198, 255, 0.5);
+}
+
+/* ===== Loading ===== */
+.loading {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 16px;
+  color: rgba(0, 198, 255, 0.9);
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 480px) {
+  .form-section {
+    padding: 30px 10px 50px;
+  }
+
+  .health-form {
+    padding: 26px 16px;
+  }
+
+  .form-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .form-row label {
+    flex: 0 0 100%;
+    margin-bottom: 2px;
+  }
+
+  .form-row input,
+  .form-row select {
+    flex: 1;
+  }
+
+  .form-row button {
+    flex: 0 0 auto;
+    padding: 9px 14px;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 198, 255, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 198, 255, 0.65);
+}
+
+/* Step Box Design */
+.step-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.step-header {
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #00c6ff;
+}
+
+/* Gender */
+.gender-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.gender-buttons button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gender-buttons button.active-gender {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+/* Sensor Row */
+.sensor-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sensor-row button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  cursor: pointer;
+}
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.graph-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.short-form {
+  max-width: 650px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.row input {
+  flex: 1;
+}
+
+.graph-stack {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.result-card {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  border: 2px solid #00c6ff;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+/* ===== TWO COLUMN LAYOUT ===== */
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px;
+}
+
+.two-column-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+/* LEFT SIDE */
+.left-form {
+  width: 440px;
+}
+
+/* RIGHT SIDE */
+.right-graphs {
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.right-graphs .graph-container {
+  width: 100%;
+}
+
+.submit-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.center-btn {
+  width: 440px;
+}
+
+/* Result Below */
+.result-card {
+  width: 440px;
+  margin: 30px auto 0 auto;
+}
